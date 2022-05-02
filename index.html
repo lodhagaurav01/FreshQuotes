@@ -9,8 +9,10 @@
     <title>FreshQuotes</title>
 </head>
 <body>
+
+    <button id="Togglemode" class="Toggle">Toggle Mode</button>
     <div class="C1">
-    <div class="container" >
+    <div class="container" id="container" >
         
         <i class="Quotes fa fa-quote-left" style="color: red;" ></i>
         <div class="text"><p   id="text"></p></div>
@@ -28,7 +30,36 @@
     let text = document.getElementById('text')
     let author = document.getElementById('author')
     let newQuote = document.getElementById('newQuote')
+    let Togglemode = document.getElementById('Togglemode')
+    let container = document.getElementById('container')
+    let  x=true;
 
+    const changemode=()=>{
+        // if(container.style.backgroundColor==='chartreuse'){
+
+        //     container.style.backgroundColor='dodgerblue'
+        // }
+        // document.getElementById("Togglemode").style.color == "red";
+       document.getElementById("container").style.backgroundColor == "dodgerblue"?document.getElementById("container").style.backgroundColor = "chartreuse":document.getElementById("container").style.backgroundColor = "dodgerblue"
+       document.getElementById("newQuote").style.backgroundColor == "lightblue"?document.getElementById("newQuote").style.backgroundColor = "black":document.getElementById("newQuote").style.backgroundColor = "lightblue"
+       document.getElementById("Togglemode").style.backgroundColor == "orange"?document.getElementById("Togglemode").style.backgroundColor = "black":document.getElementById("Togglemode").style.backgroundColor = "orange"
+       document.body.style.backgroundColor == "black"?document.body.style.backgroundColor = "white":document.body.style.backgroundColor = "black"
+       
+       document.getElementById("text").style.color == "white"?document.getElementById("text").style.color = "black":document.getElementById("text").style.color = "white"
+       document.getElementById("author").style.color == "white"?document.getElementById("author").style.color = "black":document.getElementById("author").style.color = "white"
+       document.getElementById("newQuote").style.color == "black"?document.getElementById("newQuote").style.color = "white":document.getElementById("newQuote").style.color = "black"
+       document.getElementById("Quotes").style.color == "red"?document.getElementById("Quotes").style.color = "black":document.getElementById("Quotes").style.color = "red"
+    //    document.getElementById("Togglemode").style.color == "white"?document.getElementById("Togglemode").style.color = "white":document.getElementById("Togglemode").style.color = "black"
+    //    x==false? false:true
+    //    if (!x){
+    //          document.getElementById("Togglemode").innerHTML="Dark Mode"
+    //    }
+    //    else{
+    //     document.getElementById("Togglemode").innerHTML="Light Mode"
+    //    }
+    // document.getElementById("Togglemode").style.color == "red";
+
+    }
      
     const getnewquote = () =>{
           let rdm=Math.floor(Math.random()*100)
@@ -58,7 +89,10 @@
         }
            
 
+
     }
+
+    Togglemode.addEventListener('click',changemode)
     newQuote.addEventListener('click',getnewquote)
     getquotelist();
     </script>

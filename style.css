@@ -62,3 +62,14 @@
     top:10px;
     left : 30px;
 }
+
+.Toggle{
+    background-color: black;
+    position: sticky;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    height: 6vh;
+    cursor: pointer;
+}
