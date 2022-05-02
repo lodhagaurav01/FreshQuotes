@@ -15,7 +15,7 @@
 } */
 
 .container{
-    height: 60vh;
+    height: 50vh;
     position: relative;
     width: 60%;
     background-color: chartreuse;
@@ -35,14 +35,14 @@
     bottom: 0px;
     background-color: black;
     color: white;
-    font-size: 3vh;
+    font-size: 0.8vw;
 }
 
 .author{
     position: absolute;
     bottom: 20%;
-    right: 30px;
-    font-size: 3vh;
+    right: 10%;
+    font-size: 1.2vw;
    
 
 }
@@ -51,7 +51,7 @@
     position: absolute;
     top:25%;
     left: 15%;
-    font-size: 5vh;
+    font-size: 1.8vw;
 
 }
 
