@@ -15,7 +15,7 @@
 } */
 
 .container{
-    height: 40vw;
+    height: 30vw;
     position: relative;
     width: 60%;
     background-color: chartreuse;
@@ -52,6 +52,7 @@
     top:15%;
     left: 15%;
     font-size: 3vw;
+    margin: 3px;
 }
 
 
