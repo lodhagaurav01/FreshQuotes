@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>FreshQuotes</title>
+</head>
+<body>
+    <div class="C1">
+    <div class="container" >
+        
+        <i class="Quotes fa fa-quote-left fa-2x" style="color: red;" ></i>
+        <p class="text"  id="text"></p>
+        <p  class="author" id="author"></p>
+        <button class='newQuote' id="newQuote">New Quote</button>
+    </div>
+</div>
+    
+
+
+    <script>
+
+    let Qdata = ""
+    let text = document.getElementById('text')
+    let author = document.getElementById('author')
+    let newQuote = document.getElementById('newQuote')
+
+     
+    const getnewquote = () =>{
+          let rdm=Math.floor(Math.random()*100)
+        //   console.log(rdm)
+        //   console.log(Qdata[rdm].text)
+          text.innerHTML=Qdata[rdm].text
+          if (Qdata[rdm].author!=null){ author.innerHTML= " . . . "+Qdata[rdm].author}
+          else{
+            author.innerHTML=' . . . Unknown'
+          }
+          
+
+
+    }
+
+    const getquotelist= async ()=> {
+        let api="https://type.fit/api/quotes"
+        try {
+            let data = await fetch(api)
+            Qdata=await data.json()
+            console.log(Qdata[10].text)
+            getnewquote();
+            
+        } catch (error) {
+            console.log(error)
+            
+        }
+           
+
+    }
+    newQuote.addEventListener('click',getnewquote)
+    getquotelist();
+    </script>
+</body>
+</html>
